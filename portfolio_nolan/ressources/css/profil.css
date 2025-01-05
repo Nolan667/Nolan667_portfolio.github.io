@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;  /* Centre horizontalement */
+    align-items: center;      /* Centre verticalement */
+    min-height: 100vh;        /* Hauteur minimale de la page */
+    overflow-y: auto;         /* Barre de défilement verticale si nécessaire */
+}
+
+main {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;         /* Augmente la largeur maximale pour plus d'espace */
+    margin: 20px auto;        /* Centre horizontalement */
+    overflow-y: auto;         /* Barre de défilement interne si besoin */
+    padding: 20px;
+    gap: 80px;                /* Augmente l'espace entre les sections */
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style de la section project-details */
+#project-details {
+    flex: 2;                  /* La section prend plus de place que la section des compétences */
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;              /* Texte noir */
+    overflow-y: auto;         /* Ajoute une barre de défilement si nécessaire */
+}
+
+#project-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;              /* Texte noir */
+    max-height: 500px;        /* Limite la hauteur pour éviter que la page ne soit trop longue */
+    overflow-y: auto;         /* Barre de défilement si le contenu dépasse */
+}
+
+/* Style de la section compétences */
+#competences {
+    flex: 1;                  /* La section des compétences prend une plus grande part de l'espace disponible */
+    border: 2px solid white;  /* Bordure blanche */
+    padding: 30px;            /* Réduit le padding pour maximiser l'espace */
+    background-color: black;  /* Fond noir pour contraster */
+    color: white;
+    max-width: 450px;         /* Agrandit la largeur maximale */
+    margin-left: 0;           /* Aligne à gauche */
+    overflow-y: auto;         /* Barre de défilement si nécessaire */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+.skills {
+    margin-top: 20px;
+}
+
+.skill {
+    margin-bottom: 20px; /* Espacement entre chaque compétence */
+}
+
+.progress {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.progress-bar {
+    background-color: #1E90FF;
+    height: 100%;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    font-size: 14px;
+}

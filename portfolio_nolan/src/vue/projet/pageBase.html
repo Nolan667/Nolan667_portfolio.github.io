@@ -1,0 +1,273 @@
+<?php
+declare(strict_types=1);
+
+// Charger les données JSON
+$jsonPath = __DIR__ . '/../../Data/donneProjet.json'; // Ajustez selon l'emplacement
+if (!file_exists($jsonPath)) {
+    die("Erreur : Le fichier JSON '$jsonPath' n'existe pas.");
+}
+
+$jsonData = file_get_contents($jsonPath);
+if ($jsonData === false) {
+    die("Erreur : Impossible de lire le fichier JSON à l'emplacement '$jsonPath'.");
+}
+
+$projects = json_decode($jsonData, true);
+if (json_last_error() !== JSON_ERROR_NONE) {
+    die("Erreur : Le fichier JSON est mal formaté. " . json_last_error_msg());
+}
+
+// Vérifier si un ID est passé via GET
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+if (!$id) {
+    die("Erreur : ID du projet non valide.");
+}
+
+// Trouver le projet correspondant à l'ID
+$project = array_filter($projects, fn($p) => $p['id'] == $id);
+$project = reset($project); // Obtenir le premier élément
+if (!$project) {
+echo "Projet non trouvé.";
+exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/../../ressources/css/homePage.css">
+    <title><?= htmlspecialchars($project['title'], ENT_QUOTES, 'UTF-8') ?></title>
+
+    <style>
+        /* Variables globales */
+        :root {
+            --black-color: #333;
+            --white-color: #fff;
+            --header-height: 60px;
+            --first-color: #007bff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: var(--black-color);
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        main {
+
+            background-color: white;
+            padding: 20px;
+            padding-top: var(--header-height); /* Ajustement pour éviter que le contenu soit masqué par le header */
+        }
+
+        section {
+            margin-top: 50px;
+
+            margin-bottom: 20px;
+            background: var(--white-color);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        .competence {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+
+        .competence h3 {
+            margin: 0 0 10px;
+        }
+
+        a {
+            color: var(--first-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .l-header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: var(--z-fixed);
+            background-color: black;
+        }
+
+        .nav {
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: var(--font-bold);
+        }
+        /* Style général du menu */
+        .nav-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        /* Liens du menu principal */
+        .nav-item {
+            position: relative;
+        }
+
+        /* Style pour les liens du menu principal */
+        .nav-link {
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            background-color: black;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        /* Effet au survol du lien principal */
+        .nav-item:hover .nav-link {
+            background-color: #65537A;
+        }
+
+        /* Style du sous-menu (initialement caché) */
+        .submenu {
+            display: none; /* Cacher le sous-menu par défaut */
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: black;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Affichage du sous-menu lors du survol de l'élément parent */
+        .nav-item:hover .submenu {
+            display: block; /* Afficher le sous-menu quand le parent est survolé */
+            animation: slideIn 0.3s ease-out;
+        }
+
+        /* Style des liens dans le sous-menu */
+        .submenu-item {
+            width: 200px;
+        }
+
+        .submenu-link {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            background-color: #333;
+            border-radius: 4px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        /* Changement de couleur des liens au survol dans le sous-menu */
+        .submenu-link:hover {
+            background-color: #65537A;
+        }
+
+        /* Animation du sous-menu */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="l-header">
+    <nav class="nav bd-grid">
+        <div>
+            <a href="#" class="nav-logo">BUT <span>INFORMATIQUE 2ème année</span></a>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="controleurFrontal.php" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="controleurFrontal.php?action=afficherProfil&controleur=utilisateur" class="nav-link">A propos de moi</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Mon portfolio d'apprentissages</a>
+                    <!-- Sous-menu -->
+                    <ul class="submenu">
+                        <li class="submenu-item"><a href="controleurFrontal.php?action=afficherProjets&projet=1" class="submenu-link">Projet Perso</a></li>
+                        <li class="submenu-item"><a href="controleurFrontal.php?action=afficherProjets&projet=2" class="submenu-link">Projet IUT</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+    <section>
+        <h1><?= htmlspecialchars($project['title'], ENT_QUOTES, 'UTF-8') ?></h1>
+        <h2>Détails du projet</h2>
+        <ul>
+            <li><strong>Dates :</strong> <?= htmlspecialchars($project['dates'], ENT_QUOTES, 'UTF-8') ?></li>
+            <li><strong>Durée :</strong> <?= htmlspecialchars($project['duration'], ENT_QUOTES, 'UTF-8') ?></li>
+            <li><strong>Équipe :</strong> <?= htmlspecialchars($project['team'], ENT_QUOTES, 'UTF-8') ?></li>
+        </ul>
+        <p><?= htmlspecialchars($project['description'], ENT_QUOTES, 'UTF-8') ?></p>
+    </section>
+
+    <section>
+        <h2>Compétences</h2>
+        <?php foreach ($project['competences'] as $competence): ?>
+        <div class="competence">
+            <h3><?= htmlspecialchars($competence['code'], ENT_QUOTES, 'UTF-8') ?> - <?= htmlspecialchars($competence['name'], ENT_QUOTES, 'UTF-8') ?></h3>
+            <p><strong>Niveau :</strong> <?= htmlspecialchars($competence['level'], ENT_QUOTES, 'UTF-8') ?></p>
+            <p><?= htmlspecialchars($competence['details'], ENT_QUOTES, 'UTF-8') ?></p>
+            <?php if (!empty($competence['link'])): ?>
+            <a href="<?= htmlspecialchars($competence['link'], ENT_QUOTES, 'UTF-8') ?>" target="_blank">Voir plus</a>
+            <?php endif; ?>
+        </div>
+        <?php endforeach; ?>
+    </section>
+
+    <section>
+        <h2>Traces</h2>
+        <ul>
+            <?php foreach ($project['traces'] as $trace): ?>
+            <li><a href="<?= htmlspecialchars($trace['url'], ENT_QUOTES, 'UTF-8') ?>" target="_blank"><?= htmlspecialchars($trace['text'], ENT_QUOTES, 'UTF-8') ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,226 @@
+[
+  {
+    "id": 1,
+    "title": "Développement d'une application de référendum en Java à l'aide du framework Spring",
+    "dates": "Septembre 2024 - Janvier 2025",
+    "duration": "5 mois",
+    "team": "Équipe de 5 personnes",
+    "description": "Le projet de référendum en ligne réalisé avec Spring Boot est une plateforme sécurisée visant à organiser des votes électroniques de manière transparente et fiable. Ce projet repose sur une architecture modulaire composée de trois applications distinctes, chacune dédiée à un rôle spécifique : les électeurs, les scrutateurs et les administrateurs. L’application électeur permet de participer au vote de manière sécurisée, l’application scrutateur offre des outils pour surveiller et valider les scrutins, tandis que l’application administrateur est destinée à la gestion des référendums, incluant leur création, la clôture des votes et la supervision des résultats.\n\nL’un des aspects clés du projet est l’intégration de mécanismes cryptographiques avancés pour garantir la sécurité des données. Chaque vote est anonymisé et chiffré avant d’être enregistré, préservant ainsi la confidentialité et l’intégrité des informations. Des signatures numériques et des algorithmes de hachage ont également été utilisés pour protéger contre les manipulations et garantir la fiabilité des résultats. Ces fonctionnalités assurent une conformité parfaite avec les exigences de sécurité essentielles dans un système de vote électronique.\n\nLe développement du projet a suivi une méthodologie Agile, favorisant la collaboration continue entre les membres de l’équipe et une livraison itérative des fonctionnalités. Grâce à des sprints réguliers, des revues fréquentes et des ajustements en fonction des retours, chaque composante a été affinée pour répondre aux besoins des utilisateurs tout en respectant les délais. L’interface utilisateur a été soigneusement pensée pour offrir une expérience fluide et adaptée à chaque rôle.\n\nCe projet démontre une maîtrise des technologies modernes et des concepts cryptographiques appliqués, tout en illustrant une approche méthodique du développement logiciel. Il constitue une solution robuste et innovante pour la gestion de référendums en ligne, mettant l’accent sur la sécurité, l’anonymat et la transparence.",
+    "competences": [
+      {
+        "code": "optimiser : AC 3",
+        "name": "Comprendre les enjeux et les moyens de sécurisation des données et du code",
+        "level": "acquis",
+        "details": "Dans le cadre de notre projet de référendum en ligne, j’ai analysé les différentes menaces potentielles pouvant compromettre la sécurité de notre application, notamment les attaques de type homme du milieu, l’écoute réseau et les tentatives de déni de service. Pour y répondre, nous avons mis en œuvre des mesures de sécurité robustes en intégrant des protocoles de chiffrement avancés, notamment le chiffrement basé sur ElGamal. Ce choix garantit l’anonymat et l’intégrité des votes, tout en rendant les données inexploitables en cas d’interception.\n\nLe chiffrement ElGamal, que nous avons utilisé pour protéger les données sensibles des votes, offre une sécurité renforcée en rendant les informations inaccessibles sans les clés appropriées, ce qui a un impact direct sur la fiabilité de notre application. Cela permet d’assurer que les votes restent confidentiels tout au long de leur traitement et qu’aucune manipulation n’est possible.\n\nEn plus de cette couche de protection cryptographique, nous avons sécurisé les échanges entre les différents acteurs (électeurs, administrateurs, scrutateurs) grâce à des certificats d’authentification, éliminant ainsi le risque de communications falsifiées. Cette approche holistique, mêlant analyse des protocoles existants et implémentation de techniques sur mesure, a permis de concevoir une application à la fois fonctionnelle et hautement sécurisée."
+      },
+      {
+        "code": "conduire : AC 2",
+        "name": "Formaliser les besoins du client et de l’utilisateur",
+        "level": "acquis",
+        "details": "Dans le cadre de ce projet, nous avons adopté une approche rigoureuse pour formaliser les besoins du client et des utilisateurs, en veillant à ce qu'ils soient bien compris et traduits en spécifications claires. Dès les premières étapes, nous avons pris le temps de visualiser le projet ensemble, en esquissant nos idées sur des tableaux à la bibliothèque universitaire. Cela nous a permis de réfléchir collectivement à la structure du système et à ses principales fonctionnalités.\n\nPour mieux cerner les attentes, nous avons également créé des maquettes sur Figma, représentant l’interface utilisateur et le parcours au sein de l’application. Ces maquettes ont été partagées dès le début avec le client afin qu’il puisse donner son avis et valider nos choix. Cette étape a favorisé un alignement rapide et une compréhension commune des objectifs du projet.\n\nTout au long de la phase de recueil des besoins, nous avons maintenu une communication étroite avec le client en envoyant des mails réguliers pour clarifier certains points, valider des hypothèses et ajuster les spécifications au fur et à mesure que les échanges progressaient. Cette collaboration active nous a permis d’identifier à la fois les besoins fonctionnels, comme les rôles et les droits des utilisateurs, et les besoins non fonctionnels, notamment en termes de sécurité et de performance.\n\nCette formalisation détaillée des besoins a été essentielle pour guider l'équipe et structurer le développement. Elle nous a permis de rester alignés sur les attentes du client tout en offrant une base solide pour prendre des décisions éclairées à chaque étape du projet."
+      },
+      {
+        "code": "CE 4.01",
+        "name": "Respecter les réglementations sur la vie privée et la protection des données personnelles",
+        "level": "acquis",
+        "details": "J'ai intégré le respect du RGPD dans la conception de mon application en offrant aux utilisateurs un accès facile aux conditions générales d'utilisation, ce qui leur permet de comprendre leurs droits concernant leurs données et leur utilisation. J'ai également étudié les mesures nécessaires pour faciliter la suppression et la modification des comptes utilisateurs."
+      },
+      {
+        "code": "CE - 2.04 , et réaliser : AC 4",
+        "name": "Justifier les choix, valider les résultats et vérifier la qualité de l’application par les tests",
+        "level": "acquis",
+        "details": "Dans notre projet, nous avons accordé une attention particulière à la validation de chaque composant, notamment sur la partie cryptographique, en utilisant des tests unitaires avec JUnit. Ces tests nous ont permis de vérifier le bon fonctionnement des algorithmes, notamment le chiffrement et le déchiffrement des données, et d’assurer leur robustesse face aux différents scénarios d’utilisation. Nous avons également procédé de la même manière pour les trames échangées entre les différentes applications, en nous assurant que les formats étaient respectés et que les données restaient cohérentes.\n\nPour aller plus loin dans la sécurité, nous avons utilisé Wireshark pour analyser les échanges réseau. Cela nous a permis de vérifier que les données étaient bien chiffrées lors des transmissions et qu’aucune information sensible n’était visible ou interceptable. Grâce à ces outils et ces démarches, nous avons pu garantir non seulement la fiabilité de notre application, mais aussi sa sécurité face à des menaces potentielles."
+      },
+      {
+        "code": "conduire : AC 4",
+        "name": "Définir et mettre en œuvre une démarche de suivi de projet",
+        "level": "acquis",
+        "details": "En tant que Product Owner sur ce projet, j’ai joué un rôle clé dans l’organisation et la gestion du travail, en adoptant la méthodologie agile et la méthode SCRUM. Nous avons structuré le projet en sprints successifs pour avancer de manière itérative et rester alignés sur les besoins du client. Mon rôle impliquait d’organiser et de conduire des réunions régulières, notamment des daily meetings pour faire le point sur l’avancement des tâches et identifier rapidement les éventuels obstacles.\n\nJ’avais aussi la responsabilité de rédiger des comptes rendus après chaque réunion, permettant de garder une trace claire des décisions prises et des actions à entreprendre. À la fin de chaque sprint, je veillais à ce que des graphiques de suivi soient réalisés pour mesurer notre progression et ajuster notre planification si nécessaire. En tant que Product Owner, je me suis assuré que les priorités étaient claires pour l’équipe et que le projet restait aligné sur les attentes du client, tout en contribuant à la rédaction d’un rapport technique complet à la fin du projet."
+      },
+      {
+        "code": "optimiser : AC 1",
+        "name": "Choisir des structures de données complexes adaptées au problème",
+        "level": "acquis",
+        "details": "Dans ce projet, nous avons commencé avec une architecture MVC bien structurée, conçue par mon coéquipier Raphaël Gigardy. Cette architecture était d'abord gérée avec Maven, puis nous avons migré vers Gradle pour améliorer la gestion des dépendances et la performance de notre build. Bien que nous n'ayons pas utilisé de design patterns spécifiques, nous nous sommes inspirés de leur logique pour guider la construction de notre code et assurer sa qualité. En suivant cette approche, nous avons veillé à respecter les principes SOLID, garantissant ainsi que notre code soit modulaire, évolutif et facilement maintenable. Une attention particulière a été portée pour éviter toute duplication de code, ce qui a permis de rendre notre application robuste, bien structurée et prête à évoluer sans compromettre sa stabilité."
+      },
+      {
+        "code": "CE - 5.01",
+        "name": "Communiquer efficacement avec les différents acteurs d'un projet",
+        "level": "acquis",
+        "details": "En tant que Product Owner, une de mes missions principales était de garantir une communication fluide entre tous les acteurs du projet. J'ai pris une approche proactive et collaborative pour favoriser les échanges d'informations et assurer une bonne coordination au sein de l'équipe. Cela impliquait des réunions régulières avec le commanditaire pour bien cerner ses besoins, ses priorités et les évolutions du projet. J'ai pris soin de poser les bonnes questions afin de bien comprendre ses attentes et de fournir des réponses claires.\n\nEn parallèle, j'ai joué le rôle de facilitateur entre le client et l’équipe de développement, en assurant une bonne transmission des informations recueillies. Je me suis assuré que chaque membre de l’équipe soit bien informé des besoins du client et des objectifs à atteindre, afin de favoriser une prise de décision rapide et des solutions adaptées. En maintenant une communication ouverte et transparente, j'ai contribué à créer un environnement collaboratif qui a joué un rôle clé dans la réussite du projet."
+      }
+    ],
+    "traces": [
+      {
+        "text": "Lien vers le compte-rendu",
+        "url": "https://drive.google.com/drive/folders/1MSYQ_hKkulXWnLtrWGTzm-Ec6O1M23Rn?usp=sharing"
+      },
+      {
+        "text": "Lien vers le dépôt GitLab de l'application",
+        "url": "https://gitlabinfo.iutmontp.univ-montp2.fr/saes1but2/referundum2"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Site de e-commerce en PHP",
+    "dates": "Novembre 2024",
+    "duration": "1 mois",
+    "team": "Équipe de 3 personnes",
+    "description": "Le projet de site e-commerce en PHP, dédié à la vente de produits liés au hacking (physiques ou immatériels), repose sur une architecture MVC (Modèle-Vue-Contrôleur) permettant une organisation claire du code et une séparation des responsabilités entre la logique métier, la présentation et l'interaction avec la base de données. Le site est conçu pour offrir une interface utilisateur fluide tout en assurant une sécurité optimale. Pour cela, des mesures de sécurité rigoureuses ont été mises en place, notamment la protection contre les injections SQL via l'utilisation de requêtes préparées. L'authentification des utilisateurs repose sur des mots de passe robustes avec des critères stricts pour prévenir les attaques par force brute et par dictionnaire. Un système de bannissement automatique détecte et bloque les tentatives répétées d'attaques. Des tests de pénétration ont été réalisés pour identifier et corriger les vulnérabilités. Le site permet également aux administrateurs de gérer les produits via une interface dédiée. Ce projet offre ainsi une plateforme de vente fiable et sécurisée pour des produits spécialisés dans le hacking.",
+    "competences": [
+      {
+        "code": "Gérer : AC 2 , CE 4.02",
+        "name": "Assurer la confidentialité des données",
+        "level": "acquis",
+        "details": "Dans le cadre de ce projet, j'ai mis en place des mesures de sécurité avancées pour assurer la confidentialité des données sensibles. Les mots de passe des utilisateurs sont cryptés en utilisant l'algorithme SHA-256 avec un sel aléatoire unique pour chaque utilisateur, ce qui les rend irréversibles et sécurisés même en cas de fuite de la base de données. De plus, pour renforcer la sécurité contre les attaques par force brute, un mécanisme de timeout est activé après plusieurs tentatives infructueuses de connexion. Afin de prévenir les attaques par dictionnaire, j'ai intégré une vérification des mots de passe lors de leur création : ceux-ci sont comparés à une wordlist de mots courants (comme ceux présents dans le dictionnaire Rockyou). Si le mot de passe choisi appartient à cette liste, l'utilisateur est informé qu'il doit le modifier pour garantir une meilleure sécurité. Ces mesures garantissent la confidentialité des informations des utilisateurs et protègent le site contre les tentatives d'accès non autorisé."
+      },
+      {
+        "code": "Gérer : AC 3 , CE 4.03",
+        "name": "Organiser la restitution de données à travers la programmation et la visualisation",
+        "level": "acquis",
+        "details": "Dans le cadre du développement de mon site e-commerce, j'ai conçu une interface web intuitive permettant aux utilisateurs de consulter et de gérer leurs données. Les utilisateurs ont accès à une rubrique dédiée pour visualiser leur profil utilisateur, qu'ils peuvent également modifier dans les paramètres. De plus, j'ai développé une section pour afficher clairement l'historique des commandes, offrant une vue détaillée des achats effectués. L'interface administrateur permet une gestion simplifiée des données et des fonctionnalités du site. Cette organisation assure une restitution des données efficace et adaptée aux besoins des utilisateurs."
+      },
+      {
+        "code": "Gérer : AC 4",
+        "name": "Manipuler des données hétérogènes",
+        "level": "acquis",
+        "details": "Dans le cadre du projet de site e-commerce, j'ai manipulé différentes catégories de données de manière efficace. Cela inclut les informations sur les produits disponibles à la vente, les données utilisateurs telles que les profils et historiques de commandes, les données de vente pour gérer les transactions, ainsi que les données administratives permettant à l'interface administrateur de gérer le contenu et les fonctionnalités du site. Cette diversité de données a nécessité une organisation rigoureuse et une adaptation des traitements selon leur nature."
+      },
+      {
+        "code": "Réaliser : AC 3 , AC 4 , CE 1.04",
+        "name": "Vérifier et valider la qualité de l'application par des tests et adopter de bonnes pratiques de conception et de programmation",
+        "level": "acquis",
+        "details": "Dans le cadre de ce projet de création d’un site e-commerce en PHP, j’ai veillé à respecter plusieurs bonnes pratiques de conception et de programmation, tout en assurant la qualité de l’application à travers des tests approfondis.\n\nTout d’abord, j’ai suivi une architecture MVC rigoureuse, comme enseignée lors des travaux pratiques. Cette architecture m’a permis de bien organiser le code en séparant la logique métier, la présentation et le contrôle. Cela garantit une meilleure lisibilité du code, facilite sa maintenance et permet une évolution future plus simple. J’ai également appliqué les principes de responsabilité unique, où chaque fichier du projet remplit un rôle bien défini. En plus de cela, j’ai respecté des conventions de nommage claires et cohérentes pour toutes les variables, fonctions et classes utilisées dans le projet. Enfin, j’ai documenté le code afin de le rendre compréhensible pour d’autres développeurs.\n\nEn ce qui concerne la qualité de l’application, j’ai mené plusieurs tests de sécurité en simulant des tentatives d’intrusion, comme des attaques de type SQL Injection et Cross-Site Scripting (XSS). Ces tests m’ont permis d’identifier des failles potentielles, que j’ai ensuite corrigées en utilisant des requêtes préparées pour la base de données et en échappant toutes les entrées utilisateur. De plus, j’ai réalisé des tests fonctionnels sur les principales fonctionnalités du site, notamment l’ajout au panier et la gestion des commandes, afin de garantir leur bon fonctionnement dans différents scénarios.\n\nGrâce à ces efforts, ce projet respecte pleinement les compétences suivantes : adopter de bonnes pratiques de conception et de programmation, vérifier et valider la qualité de l’application par les tests."
+      }
+    ],
+    "traces": [
+      {
+        "text": "Lien vers notre site de e-commerce",
+        "url": "https://webinfo.iutmontp.univ-montp2.fr/~daoudio/projet_web_php/web/controleurFrontal.php"
+      }
+    ]
+  },
+
+  {
+    "id": 3,
+    "title": "Bug Bounty - Analyse de vulnérabilités sur des sites web",
+    "dates": "Janvier 2024",
+    "duration": "En continu",
+    "team": "Projet individuel",
+    "description": "Participation à un programme de bug bounty sur la plateforme HackerOne. L'objectif est d'analyser les vulnérabilités de sites web et de signaler les failles de sécurité. Un exemple de mission réalisée concerne le site healthy.com, où j'ai recherché des sous-domaines potentiellement vulnérables à l'aide d'outils comme Subfinder et Httpx. Après avoir identifié plusieurs sous-domaines exposés, j'ai effectué des tests manuels pour détecter d'éventuelles failles, telles que des erreurs de configuration et des pages présentant des failles exploitables. Ce type de projet suit toujours le même principe : identification des points d'entrée via des outils, puis test manuel des vulnérabilités sur les pages découvertes.",
+    "competences": [
+      {
+        "code": "AC-3.01",
+        "name": "Comprendre les enjeux et moyens de sécurisation des données et du code",
+        "level": "acquis",
+        "details": "Dans le cadre de ce projet, j'ai acquis une compréhension approfondie des enjeux liés à la sécurisation des systèmes en ligne. J'ai appris à identifier les points faibles potentiels, comme les sous-domaines exposés, et à évaluer les risques associés. J'ai utilisé des outils spécialisés tels que Subfinder pour l'énumération des sous-domaines et Httpx pour vérifier leur état. Bien que je n'aie pas encore trouvé de faille exploitable, je sais comment rédiger des rapports détaillés en suivant les standards de la plateforme HackerOne."
+      },
+      {
+        "code": "AC-3.03",
+        "name": "Sécuriser les services et données d’un système",
+        "level": "en cours",
+        "details": "Grâce à cette expérience, je suis en mesure d'appliquer des méthodologies de sécurisation, comme la vérification de la configuration des sous-domaines et la détection des erreurs de sécurité dans les pages web accessibles. Je continue de développer mes compétences en identifiant les scénarios d'attaque possibles et en testant différentes approches d'intrusion."
+      },
+      {
+        "code": "AC-4.04",
+        "name": "Vérifier et valider la qualité de l’application par les tests",
+        "level": "en cours",
+        "details": "J'ai mené des tests d'intrusion ciblés sur plusieurs sous-domaines afin d'évaluer leur niveau de sécurité. Bien que je n'aie pas encore trouvé de vulnérabilité à signaler, je maîtrise la méthodologie de rédaction des rapports de vulnérabilité, comme l'exige la plateforme HackerOne. Ces rapports doivent contenir une description précise de la faille, les étapes pour la reproduire, et une proposition de correction."
+      }
+    ],
+    "traces": [
+      {
+        "text": "Lien vers le site de HackerOne pour s'exercer ou commencer",
+        "url": "https://www.hackerone.com/"
+      }
+    ]
+  },
+    {
+      "id": 4,
+      "title": "WebScraper - Automatisation de la création de comptes Instagram et collecte de données",
+      "dates": "Janvier 2025",
+      "duration": "3 semaines",
+      "team": "Equipe de 2 personnes",
+      "description": "Implémentation d'une application de web scraping utilisant Selenium pour automatiser la création de comptes Instagram, la connexion à ces comptes, et la collecte de données telles que le nombre d'abonnés ou de likes sur des photos. L'objectif était de collecter des données statistiques sur l'engagement des utilisateurs sur Instagram pour analyser leur activité et optimiser les stratégies marketing.",
+      "competences": [
+        {
+          "code": "Optimiser : AC 3",
+          "name": "Comprendre les enjeux et moyens de sécurisation des données et du code",
+          "level": "acquis",
+          "details": "J'ai intégré des mécanismes de sécurisation des données collectées afin de protéger la confidentialité et l'intégrité des informations sensibles. Cela a inclus la gestion des accès aux comptes Instagram créés, la mise en place de méthodes pour éviter les fuites de données lors du stockage ou du traitement, et l'application des bonnes pratiques en matière de protection des données personnelles, conformément aux réglementations sur la sécurité des données."
+        },
+        {
+          "code": "Réaliser : AC 3",
+          "name": "Adopter de bonnes pratiques de conception et de programmation",
+          "level": "acquis",
+          "details": "J'ai développé un code structuré, modulaire et maintenable en utilisant Python et Selenium pour automatiser des processus complexes de création de comptes Instagram, ainsi que pour extraire des données telles que le nombre d'abonnés, de likes ou de commentaires. L'objectif était d'assurer une réutilisabilité du code et une bonne gestion des erreurs lors de l'automatisation, afin de garantir un processus robuste et fiable pour la collecte de données."
+        },
+        {
+          "code": "Réaliser : AC 4",
+          "name": "Vérifier et valider la qualité de l’application par les tests",
+          "level": "acquis",
+          "details": "J'ai mis en place une suite de tests automatisés afin de valider le bon fonctionnement de l'application dans divers scénarios. Cela a inclus des tests unitaires pour valider la logique du code, des tests d'intégration pour assurer la bonne communication entre les différents modules, ainsi que des tests fonctionnels pour s'assurer que l'application fonctionne comme prévu lors de la création de comptes et de la collecte de données sur Instagram."
+        },
+        {
+          "code": "Conduire : AC 4",
+          "name": "Suivi de projet avec GitLab et gestion des issues",
+          "level": "acquis",
+          "details": "Pour la gestion du projet, j'ai utilisé GitLab pour le suivi des tâches et des issues. Chaque phase du projet, de la création des comptes Instagram à l'optimisation des processus de collecte de données, a été divisée en plusieurs **issues** spécifiques. J'ai géré le flux de travail en assignant les tâches aux membres de l'équipe, en suivant leur avancement et en résolvant rapidement les problèmes identifiés grâce à une gestion active des **merge requests** et des **commit messages**. Cette approche m'a permis de garantir que le projet respectait les délais tout en assurant une qualité optimale de chaque fonctionnalité développée."
+        }
+      ],
+      "traces": [
+        {
+          "text": "Lien vers le depot gitlab",
+          "url": "https://github.com/ELREBEU/FindStageOrConsequence"
+        }
+      ]
+    },
+
+    {
+      "id": 5,
+      "title": "E3cete - Conception d'un jeu de cartes avec différentes méthodes de tri",
+      "dates": "Janvier 2024",
+      "duration": "1 mois",
+      "team": "Equipe de 2 personnes",
+      "description": "Ce projet a consisté à concevoir et développer un jeu de cartes en Java, en implémentant diverses méthodes de tri, telles que le tri à bulles, le tri rapide et le tri par insertion, selon les exigences imposées. L'objectif était de gérer efficacement et rapidement un ensemble de cartes en triant ces dernières en fonction de différents critères (valeurs et couleurs), tout en respectant des contraintes de performance strictes. Nous avons aussi comparé les performances de chaque algorithme et analysé les résultats obtenus afin de choisir la méthode la plus optimale pour le projet.",
+      "competences": [
+        {
+          "code": "Optimiser : AC 2",
+          "name": "Utiliser des techniques algorithmiques adaptées pour des problèmes complexes",
+          "level": "acquis",
+          "details": "Dans ce projet, j'ai mis en œuvre des algorithmes de tri classiques (tri à bulles, tri rapide et tri par insertion) pour trier efficacement les cartes en fonction de plusieurs critères. Chacun de ces algorithmes a été choisi et ajusté en fonction des besoins du projet. J'ai également analysé la complexité algorithmique de chaque méthode, en étudiant leur performance en termes de temps d'exécution et de gestion de mémoire pour optimiser la solution globale. Ce processus m'a permis de sélectionner l'algorithme le mieux adapté aux contraintes imposées par le client."
+        },
+        {
+          "code": "Gérer : CE4.03",
+          "name": "S'appuyer sur des bases mathématiques",
+          "level": "acquis",
+          "details": "L'optimisation des algorithmes de tri a nécessité une compréhension approfondie des bases mathématiques, en particulier la complexité en temps des différents algorithmes. J'ai analysé chaque méthode sous l'angle de sa complexité algorithmique (complexité en O), ce qui m'a permis de comprendre l'impact de chaque approche sur la performance globale du programme. Ce processus d'analyse mathématique m'a permis de prendre des décisions éclairées sur les méthodes de tri à utiliser en fonction des critères de performance du projet."
+        },
+        {
+          "code": "Gérer : AC 4",
+          "name": "Manipuler des données hétérogènes",
+          "level": "acquis",
+          "details": "Lors de ce projet, j'ai manipulé des données hétérogènes, car chaque carte du jeu comportait plusieurs attributs différents, tels que la valeur et la couleur. J'ai donc conçu des méthodes de tri multi-critères, permettant de trier les cartes en fonction de ces attributs simultanément. J'ai également géré la conversion de données et optimisé leur traitement pour garantir une efficacité maximale, en utilisant les bonnes structures de données et en veillant à ce que le tri prenne en compte les différents types de données (nombres et chaînes de caractères)."
+        },
+        {
+          "code": "Réaliser : CE1.01",
+          "name": "Respecter les besoins du client",
+          "level": "acquis",
+          "details": "L'un des principaux objectifs de ce projet était de respecter les besoins spécifiques du client en matière de tri des cartes. En suivant les exigences du cahier des charges, j'ai adapté les algorithmes de tri pour correspondre aux contraintes de performance, tout en m'assurant que le code reste propre, lisible et optimisé. En prenant en compte les spécifications du client, j'ai veillé à ce que l'application soit non seulement fonctionnelle mais également efficace et conforme aux attentes initiales."
+        }
+      ],
+      "traces": [
+        {
+          "text": "Lien vers gitlab vers le depot du projet",
+          "url": "https://gitlabinfo.iutmontp.univ-montp2.fr/devinitiatique/etuOLD2324/martinezc-pujoln/sae_e3cete"
+        },
+        {
+          "text": "Lien vers le drive menant à la partie mathématique du projet",
+          "url": "https://drive.google.com/drive/folders/1nAhYWU7B3-PqHr9JdWMN-3Jn3-KqjjSZ?usp=sharing"
+        }
+      ]
+    }
+
+  ]
+

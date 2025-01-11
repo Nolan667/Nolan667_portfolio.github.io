@@ -1,0 +1,14 @@
+.card {
+    background-color: #333366;
+    color: white;
+}
+
+.card h6 {
+    font-weight: bold;
+}
+
+.card a, .underline, ol a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
